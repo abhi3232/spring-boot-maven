@@ -18,7 +18,7 @@ public class IDPResource {
 
 	@RequestMapping(method=RequestMethod.GET,value="/getConf")
 	@ResponseBody
-	public Map<String, Object> getConfiguration(){
-		return idpConfig.getConfigMap();
+	public void getConfiguration(){
+		System.out.println(idpConfig.getConfigMap());
 	}
 }
