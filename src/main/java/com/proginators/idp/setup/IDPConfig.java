@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
@@ -12,14 +13,13 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component
-@PropertySource("classpath:pro-idp-properties.properties")
+@EnableConfigurationProperties
 @ConfigurationProperties
+@PropertySource("classpath:pro-idp-properties.properties")
 public class IDPConfig {
-	private final Map<String, Object> configMap = new HashMap<>();
+	private  final Map<String, String> configMap = new HashMap<>();
 
-	public Map<String, Object> getConfigMap() {
+	public Map<String, String> getConfigMap() {
 		return configMap;
 	}
-	
-	
 }
